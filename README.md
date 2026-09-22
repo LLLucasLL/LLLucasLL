@@ -37,12 +37,8 @@ Tenho experiência em desenvolvimento web com WordPress, PHP, MySQL e PostgreSQL
 ## 📊 Estatísticas do GitHub
 
 <p align="center">
-  <img height="180em" src="https://github-stats-extended.vercel.app/api?username=lucas-lica&show_icons=true&theme=tokyonight&include_all_commits=true&locale=pt-br" alt="GitHub Stats" />
-  <img height="180em" src="https://github-stats-extended.vercel.app/api/top-langs/?username=lucas-lica&layout=compact&theme=tokyonight&langs_count=8&locale=pt-br" alt="Linguagens mais usadas" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=lucas-lica&theme=tokyonight&locale=pt_BR" alt="GitHub Streak" />
+  <img height="180em" src="./profile/stats.svg" alt="GitHub Stats" />
+  <img height="180em" src="./profile/top-langs.svg" alt="Linguagens mais usadas" />
 </p>
 
 ---
