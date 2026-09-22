@@ -2,18 +2,24 @@ name: Atualizar Estatísticas do Perfil
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Executa automaticamente todos os dias à meia-noite
-  workflow_dispatch: # Permite que execute manualmente pelo painel do GitHub
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Necessário para o Action poder salvar os svgs gerados no seu repositório
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # 1. Gera o card principal de estatísticas
+      - name: Configurar identidade do Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Gerar Card de Estatísticas
         uses: stats-organization/github-readme-stats-action@v2
         with:
@@ -22,7 +28,6 @@ jobs:
           path: profile/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # 2. Gera o card de linguagens mais usadas
       - name: Gerar Card de Linguagens
         uses: stats-organization/github-readme-stats-action@v2
         with:
@@ -31,9 +36,9 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Faz o commit automático dos arquivos gerados na pasta profile/
       - name: Commit e Push das Alterações
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Atualização automática dos cards de estatísticas [skip ci]"
           branch: main
+          push_options: '--force'
