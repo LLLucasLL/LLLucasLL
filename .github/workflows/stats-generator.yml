@@ -36,7 +36,6 @@ jobs:
           
           git add profile/stats.svg profile/top-langs.svg
           
-          # Verifica se há alterações para commitar
           if git diff --staged --quiet; then
             echo "Nenhuma alteração nos cards para commitar."
           else
