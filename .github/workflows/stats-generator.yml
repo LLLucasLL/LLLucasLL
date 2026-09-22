@@ -18,7 +18,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: username=lucas-lica&show_icons=true&include_all_commits=true&theme=tokyonight&locale=pt-br
+          options: username=LLLucasLL&show_icons=true&include_all_commits=true&theme=tokyonight&locale=pt-br
           path: profile/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -27,7 +27,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: username=lucas-lica&layout=compact&langs_count=8&theme=tokyonight&locale=pt-br
+          options: username=LLLucasLL&layout=compact&langs_count=8&theme=tokyonight&locale=pt-br
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
